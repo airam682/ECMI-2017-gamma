@@ -1,0 +1,33 @@
+Company was interested in the following criteria (in order of importance):
+\begin{enumerate}
+	\item The mass fraction of all species must be equally distributed throughout the 3 outlets, so for example one third of the total oxygen intake will be at any given outlet.
+	\item Composition must be the same in all outlets (same volume fraction of each species).
+	\item Minimum and maximum admissible oxygen concentrations are 18\% and 19\% (approximately)
+	\item Homogeneity should be as high as possible and as close as possible between center and the sides (perfect agreement is not possible as side outlets are half as long as central outlet, leaving less mixing distance for the species to homogenize).
+\end{enumerate}
+
+For this, the optimization of the design was made using the following parameters:
+\begin{enumerate}
+	\item number of inlets.
+	\item position of inlets.
+	\item angle of inlets.
+	\item geometry of the inlets.
+\end{enumerate}
+
+Mixing efficiency of species is defined as:
+\begin{equation}
+	\eta = 1 - \sqrt{E[(c_i - \overline{c}^*)^2]}
+\end{equation}
+where
+\begin{enumerate}
+	\item $c_i$ is the volume fraction of species \emph{c} in node \emph{i}.
+	\item $\overline{c}^*$ is the target volume fraction of species \emph{c} in the mix.
+	\item $E(X)$ is the mean of the distribution \emph{X}.
+\end{enumerate}
+So essentially it can be rewritten as
+\begin{equation}
+	\eta = 1 - \sigma(C,\overline{c}^*)
+\end{equation}
+where $\sigma(X,\mu)$ is the standard deviation of distribution \emph{X} from mean $\mu$, and $C$ is the distribution of the fraction of species \emph{c} throughout a given region of the domain. Due to the discretization this distribution is realized at nodes, hence the $c_i$ notation.
+
+If the deviation is zero it means that every point has the same fraction of species \emph{c} and therefore is perfectly homogeneus, thus $\eta=1$.
